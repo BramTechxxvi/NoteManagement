@@ -19,8 +19,8 @@ public class NoteController {
         this.noteServices = noteServices;
     }
 
-//    @PostMapping
-//    public ResponseEntity<CreateNoteResponse> createNote(@RequestBody CreateNoteRequest request) {
-//
-//    }
+    @PostMapping
+    public ResponseEntity<CreateNoteResponse> createNote(@RequestBody CreateNoteRequest request) {
+
+    }
 }
