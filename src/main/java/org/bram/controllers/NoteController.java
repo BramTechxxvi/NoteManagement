@@ -1,5 +1,6 @@
 package org.bram.controllers;
 
+import org.bram.data.models.Note;
 import org.bram.dtos.request.*;
 import org.bram.dtos.response.*;
 import org.bram.exceptions.NoteNotFoundException;
@@ -48,5 +49,5 @@ public class NoteController {
     }
 
     @GetMapping("/getAllNotes")
-    public ResponseEntity<List>
+    public ResponseEntity<List<Note>> getAllNotes()
 }
