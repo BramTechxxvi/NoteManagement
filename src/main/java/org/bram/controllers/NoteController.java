@@ -21,6 +21,8 @@ public class NoteController {
 
     @PostMapping
     public ResponseEntity<CreateNoteResponse> createNote(@RequestBody CreateNoteRequest request) {
-
+        try {
+            CreateNoteResponse
+        }
     }
 }
