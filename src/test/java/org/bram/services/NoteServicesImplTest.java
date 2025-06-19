@@ -91,6 +91,7 @@ class NoteServicesImplTest {
     @Test
     public void deleteNote__deleteNoteTest() {
         createNoteTest();
+        deleteNoteRequest.set
     }
 
 
