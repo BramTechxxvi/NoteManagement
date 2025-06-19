@@ -7,5 +7,4 @@ import org.springframework.data.annotation.Id;
 public class DeleteNoteRequest {
     @Id
     private String id;
-    private
 }
