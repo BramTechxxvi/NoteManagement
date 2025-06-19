@@ -57,6 +57,7 @@ public class NoteController {
 
     @PutMapping("/update/{id}")
     public ResponseEntity<UpdateNoteResponse> updateNote(@PathVariable("id") String id, @RequestBody UpdateNoteRequest request) {
-        UpdateNoteResponse response = noteServices.updateNote(re)
+        UpdateNoteResponse response = noteServices.updateNote(request);
+        return Resp
     }
 }
