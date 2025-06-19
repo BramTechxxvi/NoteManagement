@@ -5,7 +5,6 @@ import org.bram.dtos.response.*;
 import org.bram.exceptions.NoteNotFoundException;
 import org.bram.services.NoteServices;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,7 +30,7 @@ public class NoteController {
             CreateNoteResponse errorResponse = new CreateNoteResponse();
             errorResponse.setSuccess(false);
             errorResponse.setMessage("Note could not be created");
-            
+
         }
     }
 }
