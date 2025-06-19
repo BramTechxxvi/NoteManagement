@@ -72,7 +72,7 @@ public class NoteController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<DeleteNoteResponse> deleteNote(@PathVariable("id") String id, @RequestBody DeleteNoteRequest request, Errors errors) {
+    public ResponseEntity<DeleteNoteResponse> deleteNote(@PathVariable("id") String id, @RequestBody DeleteNoteRequest request) {
         try {
             request.setId(id);
             DeleteNoteResponse response = noteServices.deleteNote(request);
