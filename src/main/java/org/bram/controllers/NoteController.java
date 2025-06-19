@@ -37,6 +37,9 @@ public class NoteController {
         try {
             FindNoteResponse response = new FindNoteResponse();
             return ResponseEntity.status(HttpStatus.OK).body(request);
-        } catch (N)
+
+        } catch (NoteNotFoundException e) {
+            FindNoteResponse errorResponse = new FindNoteResponse();
+        }
     }
 }
