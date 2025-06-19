@@ -61,13 +61,14 @@ public class NoteController {
             request.setNoteId(id);
             UpdateNoteResponse response = noteServices.updateNote(request);
             return ResponseEntity.status(HttpStatus.OK).body(response);
+
         } catch()
     }
 
     @DeleteMapping("/delete")
     public ResponseEntity<DeleteNoteResponse> deleteNote(@PathVariable("id") String id, @RequestBody DeleteNoteRequest request) {
         try {
-            
+
         }
     }
 }
