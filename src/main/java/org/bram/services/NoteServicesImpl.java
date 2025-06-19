@@ -74,6 +74,7 @@ public class NoteServicesImpl implements NoteServices {
     public DeleteNoteResponse deleteNote(DeleteNoteRequest request) {
         Note note = noteRepository.findById(request.getId())
                 .orElseThrow(()-> new NoteNotFoundException("Note not found"));
-         null;
+
+        notw
     }
 }
