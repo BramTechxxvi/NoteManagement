@@ -65,6 +65,6 @@ public class NoteController {
     }
 
     @DeleteMapping("/delete")
-    public ResponseEntity<DeleteNoteResponse> deleteNote(@)
+    public ResponseEntity<DeleteNoteResponse> deleteNote(@PathVariable("id") String id) {}
 }
 
