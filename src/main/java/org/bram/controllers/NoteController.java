@@ -43,6 +43,7 @@ public class NoteController {
             FindNoteResponse errorResponse = new FindNoteResponse();
             errorResponse.setSuccess(false);
             errorResponse.setMessage(e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
         }
     }
 }
