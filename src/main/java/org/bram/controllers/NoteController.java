@@ -77,6 +77,7 @@ public class NoteController {
             request.setId(id);
             DeleteNoteResponse response = noteServices.deleteNote(request);
             return ResponseEntity.status(HttpStatus.OK).body(response);
+
         } catch (NoteNotFoundException e) {
             DeleteNoteResponse errorResponse = new DeleteNoteResponse();
             errorResponse.setSuccess(false);
