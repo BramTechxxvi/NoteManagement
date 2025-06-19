@@ -74,8 +74,9 @@ public class NoteController {
     public ResponseEntity<DeleteNoteResponse> deleteNote(@PathVariable("id") String id, @RequestBody DeleteNoteRequest request) {
         try {
             request.setId(id);
-            DeleteNoteResponse response = noteServices.deleteNote(request)';'
-        }
+            DeleteNoteResponse response = noteServices.deleteNote(request);
+            return ResponseEntity.status(HttpStatus.OK).body(response);
+        } catch (No)
     }
 }
 
