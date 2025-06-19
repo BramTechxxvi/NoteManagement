@@ -55,5 +55,6 @@ public class NoteController {
         return ResponseEntity.status(HttpStatus.OK).body(noteServices.getAllNotes());
     }
 
-    @
+    @PutMapping("/update/{id}")
+    public ResponseEntity<UpdateNoteResponse> upda
 }
