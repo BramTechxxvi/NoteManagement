@@ -31,7 +31,7 @@ public class NoteController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
         }
     }
-    
+
     @GetMapping("/getANote")
     public ResponseEntity<FindNoteRequest> getNoteById(@RequestBody FindNoteRequest request) {}
 }
