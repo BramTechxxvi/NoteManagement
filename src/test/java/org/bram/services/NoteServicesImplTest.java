@@ -95,5 +95,4 @@ class NoteServicesImplTest {
         deleteNoteResponse = noteServices.deleteNote(deleteNoteRequest);
         assertEquals("Successfully deleted", deleteNoteResponse.getMessage());
     }
-
 }
