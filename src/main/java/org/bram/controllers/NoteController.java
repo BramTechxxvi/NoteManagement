@@ -33,5 +33,5 @@ public class NoteController {
     }
 
     @GetMapping("/getANote")
-    public ResponseEntity<FindNoteRequest> getNoteBy
+    public ResponseEntity<FindNoteRequest> getNoteById(@RequestBody FindNoteRequest request) {}
 }
