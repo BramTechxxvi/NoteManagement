@@ -33,7 +33,7 @@ public class NoteController {
     }
 
     @GetMapping("/getANote/{id}")
-    public ResponseEntity<FindNoteRequest> getNoteById(@PathVariable("id") String id, @RequestBody FindNoteRequest request) {
+    public ResponseEntity<FindNoteResponse> getNoteById(@PathVariable("id") String id, @RequestBody FindNoteRequest request) {
         try {
             request.setId(id);
             FindNoteResponse response = noteServices.getNoteById(request);
