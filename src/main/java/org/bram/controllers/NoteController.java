@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/notes")
 public class NoteController {
@@ -49,5 +51,9 @@ public class NoteController {
     }
 
     @GetMapping("/getAllNotes")
-    public ResponseEntity<List<Note>> getAllNotes()
+    public ResponseEntity<List<Note>> getAllNotes() {
+        return ResponseEntity.status(HttpStatus.OK).body(noteServices.getAllNotes());
+    }
+
+    @
 }
