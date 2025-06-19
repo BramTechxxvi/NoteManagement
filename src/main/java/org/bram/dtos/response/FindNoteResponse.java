@@ -10,4 +10,5 @@ public class FindNoteResponse {
     @DBRef
     private Note note;
     private boolean success;
+    private Str
 }
