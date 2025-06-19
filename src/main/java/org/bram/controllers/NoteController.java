@@ -7,6 +7,7 @@ import org.bram.exceptions.NoteNotFoundException;
 import org.bram.services.NoteServices;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -71,12 +72,16 @@ public class NoteController {
     }
 
     @DeleteMapping("/delete")
-    public ResponseEntity<DeleteNoteResponse> deleteNote(@PathVariable("id") String id, @RequestBody DeleteNoteRequest request) {
+    public ResponseEntity<DeleteNoteResponse> deleteNote(@PathVariable("id") String id, @RequestBody DeleteNoteRequest request, Errors errors) {
         try {
             request.setId(id);
             DeleteNoteResponse response = noteServices.deleteNote(request);
             return ResponseEntity.status(HttpStatus.OK).body(response);
-        } catch (No)
+        } catch (NoteNotFoundException e) {
+            DeleteNoteResponse errorResponse = new DeleteNoteResponse();
+            errorResponse.setSuccess(false);
+            error;
+        }
     }
 }
 
