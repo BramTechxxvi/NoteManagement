@@ -62,7 +62,12 @@ public class NoteController {
             UpdateNoteResponse response = noteServices.updateNote(request);
             return ResponseEntity.status(HttpStatus.OK).body(response);
 
-        } catch()
+        } catch(NoteNotFoundException e) {
+            UpdateNoteResponse errorResponse = new UpdateNoteResponse();
+            errorResponse.setSuccess(false);
+            errorResponse.setMessage(e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
+        }
     }
 
     @DeleteMapping("/delete")
