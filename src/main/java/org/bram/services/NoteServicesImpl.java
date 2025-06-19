@@ -75,7 +75,7 @@ public class NoteServicesImpl implements NoteServices {
         Note note = noteRepository.findById(request.getId())
                 .orElseThrow(()-> new NoteNotFoundException("Note not found"));
 
-        note.setUpdatedAt(LocalDateTime.now());
         note.setId(request.getId());
+        noteRepository.delete(note);
     }
 }
