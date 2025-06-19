@@ -78,6 +78,10 @@ public class NoteServicesImpl implements NoteServices {
         note.setId(request.getId());
         noteRepository.delete(note);
 
-        
+        DeleteNoteResponse response = new DeleteNoteResponse();
+        response.setSuccess(true);
+        response.setMessage("Deleted successfully");
+
+        return response;
     }
 }
