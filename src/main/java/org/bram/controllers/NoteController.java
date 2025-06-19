@@ -29,7 +29,9 @@ public class NoteController {
         } catch (NoteNotFoundException e) {
             CreateNoteResponse errorResponse = new CreateNoteResponse();
             errorResponse.setSuccess(false);
-            errorResponse.setMessage("Note could not be created");
+            errorResponse.setMessage("Note could not be created")
+
+            returm;
 
         }
     }
