@@ -72,7 +72,7 @@ public class NoteServicesImpl implements NoteServices {
 
     @Override
     public DeleteNoteResponse deleteNote(DeleteNoteRequest request) {
-
+        Note note =
          null;
     }
 }
