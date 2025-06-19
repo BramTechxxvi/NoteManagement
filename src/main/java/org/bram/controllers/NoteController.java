@@ -21,7 +21,7 @@ public class NoteController {
     @PostMapping("/create")
     public ResponseEntity<CreateNoteResponse> createNote(@RequestBody CreateNoteRequest request) {
         try {
-            CreateNoteResponse response = new CreateNoteResponse();
+            CreateNoteResponse response = noteServices.createNote(request);
             return ResponseEntity.status(HttpStatus.CREATED).body(response);
 
         } catch (RuntimeException e) {
