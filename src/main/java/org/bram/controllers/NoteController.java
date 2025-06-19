@@ -41,7 +41,7 @@ public class NoteController {
         } catch (NoteNotFoundException e) {
             FindNoteResponse errorResponse = new FindNoteResponse();
             errorResponse.setSuccess(false);
-            errorResponse.
+            errorResponse.;
         }
     }
 }
