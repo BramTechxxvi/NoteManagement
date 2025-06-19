@@ -81,7 +81,7 @@ public class NoteController {
             DeleteNoteResponse errorResponse = new DeleteNoteResponse();
             errorResponse.setSuccess(false);
             errorResponse.setMessage(e.getMessage());
-            return ResponseEntity
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
         }
     }
 
