@@ -26,6 +26,6 @@ public class NoteController {
         try {
             CreateNoteResponse response = new CreateNoteResponse();
             return ResponseEntity.status(HttpStatus.CREATED).body(response);
-        } carch
+        } catch
     }
 }
