@@ -64,6 +64,7 @@ public class NoteController {
         } catch()
     }
 
-    @DetMapping()
+    @DeleteMapping("/delete")
+    public ResponseEntity<DeleteNoteResponse> de
 }
 
