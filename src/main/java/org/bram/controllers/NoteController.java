@@ -21,7 +21,7 @@ public class NoteController {
         this.noteServices = noteServices;
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<CreateNoteResponse> createNote(@RequestBody CreateNoteRequest request) {
         try {
             CreateNoteResponse response = new CreateNoteResponse();
@@ -31,7 +31,6 @@ public class NoteController {
             CreateNoteResponse errorResponse = new CreateNoteResponse();
             errorResponse.setSuccess(false);
             errorResponse.setMessage("Note could not be created");
-
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
         }
     }
