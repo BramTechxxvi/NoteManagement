@@ -6,4 +6,7 @@ import org.springframework.data.annotation.Id;
 @Data
 public class DeleteNoteResponse {
 
+    private String message;
+    
+
 }
