@@ -61,7 +61,7 @@ public class NoteController {
             request.setNoteId(id);
             UpdateNoteResponse response = noteServices.updateNote(request);
             return ResponseEntity.status(HttpStatus.OK).body(response);
-        }
+        } catch()
     }
 }
 
