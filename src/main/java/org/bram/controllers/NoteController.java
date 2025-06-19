@@ -47,5 +47,6 @@ public class NoteController {
         }
     }
 
-    @GetMapping("/getAllTask")
+    @GetMapping("/getAllNotes")
+    public ResponseEntity<List>
 }
