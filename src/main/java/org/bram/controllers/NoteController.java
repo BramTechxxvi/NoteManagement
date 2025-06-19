@@ -27,7 +27,7 @@ public class NoteController {
         } catch (RuntimeException e) {
             CreateNoteResponse errorResponse = new CreateNoteResponse();
             errorResponse.setSuccess(false);
-            errorResponse.setMessage("Note could not be created");
+            errorResponse.setMessage(e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
         }
     }
@@ -41,7 +41,7 @@ public class NoteController {
         } catch (NoteNotFoundException e) {
             FindNoteResponse errorResponse = new FindNoteResponse();
             errorResponse.setSuccess(false);
-            errorResponse.;
+            errorResponse.setMessage(e.getMessage());
         }
     }
 }
