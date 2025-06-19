@@ -33,7 +33,6 @@ public class NoteController {
             errorResponse.setMessage("Note could not be created");
 
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
-
         }
     }
 }
