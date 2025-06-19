@@ -5,6 +5,8 @@ import org.springframework.data.annotation.Id;
 
 @Data
 public class DeleteNoteResponse {
-    @Id
     
+    @Id
+    private String noteId;
+
 }
