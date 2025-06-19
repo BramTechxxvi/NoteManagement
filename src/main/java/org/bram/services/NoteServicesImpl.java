@@ -73,7 +73,7 @@ public class NoteServicesImpl implements NoteServices {
     @Override
     public DeleteNoteResponse deleteNote(DeleteNoteRequest request) {
         Note note = noteRepository.findById(request.getId())
-                .or
+                .orElseThrow(()-> new NoteNotFoundException("Note not found"));
          null;
     }
 }
