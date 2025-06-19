@@ -7,7 +7,6 @@ import org.bram.exceptions.NoteNotFoundException;
 import org.bram.services.NoteServices;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
