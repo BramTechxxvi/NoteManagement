@@ -33,5 +33,10 @@ public class NoteController {
     }
 
     @GetMapping("/getANote")
-    public ResponseEntity<FindNoteRequest> getNoteById(@RequestBody FindNoteRequest request) {}
+    public ResponseEntity<FindNoteRequest> getNoteById(@RequestBody FindNoteRequest request) {
+        try {
+            FindNoteResponse response = new FindNoteResponse();
+            return ResponseEntity.status(HttpStatus.OK).body(request);
+        } catch (N)
+    }
 }
