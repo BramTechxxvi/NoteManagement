@@ -3,6 +3,8 @@ package org.bram.controllers;
 import org.bram.dtos.request.*;
 import org.bram.dtos.response.*;
 import org.bram.services.NoteServices;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,7 +25,7 @@ public class NoteController {
     public ResponseEntity<CreateNoteResponse> createNote(@RequestBody CreateNoteRequest request) {
         try {
             CreateNoteResponse response = new CreateNoteResponse();
-            res
+            return ResponseEntity.status(HttpStatus.CREATED).body(response);
         }
     }
 }
