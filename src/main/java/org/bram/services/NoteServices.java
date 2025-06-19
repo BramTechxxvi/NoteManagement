@@ -9,9 +9,7 @@ import java.util.List;
 public interface NoteServices {
 
     CreateNoteResponse createNote(CreateNoteRequest request);
-
     FindNoteResponse getNoteById(FindNoteRequest request);
-
     List<Note> getAllNotes();
 
     UpdateNoteResponse updateNote(UpdateNoteRequest request);
