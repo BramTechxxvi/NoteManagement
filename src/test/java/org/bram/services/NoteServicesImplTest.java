@@ -96,6 +96,4 @@ class NoteServicesImplTest {
         assertEquals("Successfully deleted", deleteNoteResponse.getMessage());
     }
 
-
-
 }
