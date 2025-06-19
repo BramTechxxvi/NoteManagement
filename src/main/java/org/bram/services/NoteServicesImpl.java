@@ -77,5 +77,7 @@ public class NoteServicesImpl implements NoteServices {
 
         note.setId(request.getId());
         noteRepository.delete(note);
+
+        
     }
 }
