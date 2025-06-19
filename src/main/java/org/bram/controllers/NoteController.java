@@ -28,7 +28,10 @@ public class NoteController {
             CreateNoteResponse response = new CreateNoteResponse();
             return ResponseEntity.status(HttpStatus.CREATED).body(response);
         } catch (NoteNotFoundException e) {
-            Cr
+            CreateNoteResponse errorResponse = new CreateNoteResponse();
+            errorResponse.setSuccess(false);
+            errorResponse.setMessage("Note could not be created");
+            
         }
     }
 }
