@@ -80,7 +80,7 @@ public class NoteServicesImpl implements NoteServices {
 
         DeleteNoteResponse response = new DeleteNoteResponse();
         response.setSuccess(true);
-        response.setMessage("Deleted successfully");
+        response.setMessage("Successfully deleted");
 
         return response;
     }
