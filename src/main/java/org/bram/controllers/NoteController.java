@@ -80,8 +80,13 @@ public class NoteController {
         } catch (NoteNotFoundException e) {
             DeleteNoteResponse errorResponse = new DeleteNoteResponse();
             errorResponse.setSuccess(false);
-            error;
+            errorResponse.setMessage(e.getMessage());
+            return ResponseEntity
         }
     }
+
+
+
+
 }
 
