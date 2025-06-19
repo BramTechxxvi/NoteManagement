@@ -2,6 +2,7 @@ package org.bram.controllers;
 
 import org.bram.dtos.request.*;
 import org.bram.dtos.response.*;
+import org.bram.exceptions.NoteNotFoundException;
 import org.bram.services.NoteServices;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -26,6 +27,8 @@ public class NoteController {
         try {
             CreateNoteResponse response = new CreateNoteResponse();
             return ResponseEntity.status(HttpStatus.CREATED).body(response);
-        } catch
+        } catch (NoteNotFoundException e) {
+            Cr
+        }
     }
 }
