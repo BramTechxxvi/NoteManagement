@@ -93,7 +93,7 @@ class NoteServicesImplTest {
         createNoteTest();
         deleteNoteRequest.setId(createNoteResponse.getId());
         deleteNoteResponse = noteServices.deleteNote(deleteNoteRequest);
-        assertEquals("Successfully deleted", deleteNoteResponse.getMessage())
+        assertEquals("Successfully deleted", deleteNoteResponse.getMessage());
     }
 
 
