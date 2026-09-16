@@ -1,11 +1,13 @@
 package org.bram.dtos.request;
 
 import jakarta.validation.constraints.NotBlank;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-@Data
+@Setter
+@Getter
 public class CreateNoteRequest {
 
     @NotBlank(message= "Enter note title")

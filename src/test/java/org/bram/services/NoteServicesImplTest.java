@@ -18,7 +18,7 @@ class NoteServicesImplTest {
     @Autowired
     private NoteRepository noteRepository;
     @Autowired
-    private NoteServices noteServices;
+    private NoteServicesImpl noteServicesImpl;
     private CreateNoteResponse createNoteResponse;
     private FindNoteResponse findNoteResponse;
     private UpdateNoteResponse updateNoteResponse;
@@ -45,7 +45,7 @@ class NoteServicesImplTest {
     public void createNoteTest() {
         createNoteRequest.setTitle("English");
         createNoteRequest.setContent("Figures of speech are: \nNouns \nPronouns \nAdverbs \nVerbs \nConjunction \nAdjective");
-        createNoteResponse = noteServices.createNote(createNoteRequest);
+        createNoteResponse = noteServicesImpl.createNote(createNoteRequest);
         assertNotNull(createNoteResponse.getId());
         assertEquals(1, noteRepository.count());
         assertEquals("Successfully created", createNoteResponse.getMessage());
@@ -55,7 +55,7 @@ class NoteServicesImplTest {
     public void findNote__getNoteByIdTest() {
         createNoteTest();
         findNoteRequest.setId(createNoteResponse.getId());
-        findNoteResponse = noteServices.getNoteById(findNoteRequest);
+        findNoteResponse = noteServicesImpl.getNoteById(findNoteRequest);
         var savedNote = noteRepository.findById(findNoteRequest.getId()).orElseThrow();
         assertEquals("English", savedNote.getTitle());
     }
@@ -66,10 +66,10 @@ class NoteServicesImplTest {
         CreateNoteRequest newRequest = new CreateNoteRequest();
         newRequest.setTitle("Biology");
         newRequest.setContent("Topics: \nOrganelles \nCell structure and function \n Cell membrane \nCell cycle and division");
-        CreateNoteResponse newResponse = noteServices.createNote(newRequest);
+        CreateNoteResponse newResponse = noteServicesImpl.createNote(newRequest);
         assertNotNull(newResponse.getId());
 
-        var allNotes = noteServices.getAllNotes();
+        var allNotes = noteServicesImpl.getAllNotes();
         assertTrue(allNotes.size() >= 2);
         boolean containsEnglish = allNotes.stream()
                         .anyMatch(note-> "English".equals(note.getTitle()));
@@ -84,7 +84,7 @@ class NoteServicesImplTest {
         createNoteTest();
         updateNoteRequest.setNoteId(createNoteResponse.getId());
         updateNoteRequest.setContent("Biochemistry \nBiophysics \nAnatomy \nGenetics \nMolecular Biology \nGenetics");
-        updateNoteResponse = noteServices.updateNote(updateNoteRequest);
+        updateNoteResponse = noteServicesImpl.updateNote(updateNoteRequest);
         assertEquals("Successfully updated", updateNoteResponse.getMessage());
     }
 
@@ -92,7 +92,7 @@ class NoteServicesImplTest {
     public void deleteNote__deleteNoteTest() {
         createNoteTest();
         deleteNoteRequest.setId(createNoteResponse.getId());
-        deleteNoteResponse = noteServices.deleteNote(deleteNoteRequest);
+        deleteNoteResponse = noteServicesImpl.deleteNote(deleteNoteRequest);
         assertEquals("Successfully deleted", deleteNoteResponse.getMessage());
     }
 }
