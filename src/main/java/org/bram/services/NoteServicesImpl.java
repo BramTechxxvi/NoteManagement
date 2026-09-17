@@ -90,7 +90,7 @@ public class NoteServicesImpl implements NoteServices {
         noteRepository.deleteAll();
         DeleteNoteResponse response = new DeleteNoteResponse();
         response.setSuccess(true);
-        response.setMessage("Successfully deleted");
+        response.setMessage("Deleted successfully");
 
         return response;
     }
