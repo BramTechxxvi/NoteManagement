@@ -6,6 +6,7 @@ import org.bram.dtos.response.*;
 import org.bram.exceptions.NoteNotFoundException;
 import org.bram.services.NoteServices;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,14 +15,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/notes")
-@CrossOrigin(origins= "http://localhost:5173")
+@CrossOrigin(origins= "https://bramnotemanager.netlify.app")
 public class NoteController {
 
+    @Autowired
     private NoteServices noteServices;
 
-    public NoteController(NoteServices noteServices) {
-        this.noteServices = noteServices;
-    }
 
     @PostMapping("/create")
     public ResponseEntity<CreateNoteResponse> createNote(@RequestBody CreateNoteRequest request) {
