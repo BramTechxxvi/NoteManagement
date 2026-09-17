@@ -87,6 +87,11 @@ public class NoteServicesImpl implements NoteServices {
 
     @Override
     public DeleteNoteResponse deleteAllNotes() {
-        return null;
+        noteRepository.deleteAll();
+        DeleteNoteResponse response = new DeleteNoteResponse();
+        response.setSuccess(true);
+        response.setMessage("Successfully deleted");
+
+        return response;
     }
 }
