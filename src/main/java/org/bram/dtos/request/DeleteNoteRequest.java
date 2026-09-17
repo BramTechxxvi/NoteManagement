@@ -1,9 +1,11 @@
 package org.bram.dtos.request;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
-@Data
+@Setter
+@Getter
 public class DeleteNoteRequest {
     @Id
     private String id;
