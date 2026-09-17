@@ -95,4 +95,20 @@ class NoteServicesImplTest {
         deleteNoteResponse = noteServices.deleteNote(deleteNoteRequest);
         assertEquals("Successfully deleted", deleteNoteResponse.getMessage());
     }
+
+    @Test
+    void deleteAllNotes__deleteAllNotesTest() {
+        createNoteTest();
+        CreateNoteRequest createNoteReq = new CreateNoteRequest();
+        createNoteReq.setTitle("L2E");
+        createNoteReq.setContent("Major students from ikeja campus moved to yaba campus");
+
+        CreateNoteResponse noteResponse = noteServices.createNote(createNoteReq);
+        assertEquals("Successfully created", noteResponse.getMessage());
+        assertTrue(noteRepository.count() == 2);
+
+        DeleteNoteResponse newDeleteResponse = noteServices.deleteAllNotes();
+        assertEquals("Deleted successfully", newDeleteResponse.getMessage());
+        assertTrue(noteRepository.count() == 0);
+    }
 }
