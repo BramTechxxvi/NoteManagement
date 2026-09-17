@@ -6,6 +6,7 @@ import org.bram.dtos.response.*;
 import org.bram.exceptions.NoteNotFoundException;
 import org.bram.services.NoteServices;
 
+import org.hibernate.validator.internal.engine.messageinterpolation.el.DisabledFeatureELException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -83,6 +84,20 @@ public class NoteController {
             errorResponse.setSuccess(false);
             errorResponse.setMessage(e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
+        }
+    }
+
+    @DeleteMapping("/deleteAllNotes")
+    public ResponseEntity<DeleteNoteResponse> deleteAllNotes() {
+        try {
+            DeleteNoteResponse response = noteServices.deleteAllNotes();
+            return ResponseEntity.status(HttpStatus.OK).body(response);
+
+        } catch (NoteNotFoundException e) {
+            DeleteNoteResponse errorRes = new DeleteNoteResponse();
+            errorRes.setSuccess(false);
+            errorRes.setMessage(e.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorRes);
         }
     }
 }
