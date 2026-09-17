@@ -13,4 +13,5 @@ public interface NoteServices {
     List<Note> getAllNotes();
     UpdateNoteResponse updateNote(UpdateNoteRequest request);
     DeleteNoteResponse deleteNote(DeleteNoteRequest request);
+    DeleteNoteResponse deleteAllNotes();
 }

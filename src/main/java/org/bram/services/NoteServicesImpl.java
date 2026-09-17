@@ -84,4 +84,9 @@ public class NoteServicesImpl implements NoteServices {
 
         return response;
     }
+
+    @Override
+    public DeleteNoteResponse deleteAllNotes() {
+        return null;
+    }
 }
