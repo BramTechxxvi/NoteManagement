@@ -6,7 +6,6 @@ import org.bram.dtos.response.*;
 import org.bram.exceptions.NoteNotFoundException;
 import org.bram.services.NoteServices;
 
-import org.hibernate.validator.internal.engine.messageinterpolation.el.DisabledFeatureELException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/notes")
+@CrossOrigin(origins= "http://localhost:5173")
 public class NoteController {
 
     private NoteServices noteServices;
